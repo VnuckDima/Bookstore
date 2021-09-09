@@ -1,0 +1,104 @@
+{
+  "books": [
+    {
+      "id": 0,
+      "imageUrl": "https://chitatel.by/storage/thumbs/dd/h248_w248_ddee0d170a6b7b48a206d2bd9c67e66c.jpg",
+      "name": "Осиная Фабрика",
+      "types": [0, 1],
+      "price": 803,
+      "category": 0,
+      "rating": 4,
+      "alt": "Осиная Фабрика"
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://chitatel.by/storage/thumbs/e0/h248_w248_e0fbc67a21413318d8d55253d348d4df.jpg",
+      "name": "Голод",
+      "types": [0, 1],
+      "price": 245,
+      "category": 1,
+      "rating": 6,
+      "alt": "Голод"
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://chitatel.by/storage/thumbs/a9/h248_w248_a95e85bb6f739d494bad9180016b1410.jpg",
+      "name": "Превращение",
+      "types": [0, 1],
+      "price": 295,
+      "category": 1,
+      "rating": 4,
+      "alt": "Превращение"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://chitatel.by/storage/thumbs/2a/h248_w248_2a0ce04bdf93f864009a79ff1c053001.jpg",
+      "name": "The Shadow Over Innsmouth",
+      "types": [0, 1],
+      "price": 275,
+      "category": 2,
+      "rating": 2,
+      "alt": "The Shadow Over Innsmouth"
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://chitatel.by/storage/thumbs/8f/h248_w248_8f10b58308f1fbb6a723beaecfa66523.jpg",
+      "name": "Это я - Эдичка",
+      "types": [0, 1],
+      "price": 415,
+      "category": 3,
+      "rating": 8,
+      "alt": "Это я - Эдичка"
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://chitatel.by/storage/thumbs/96/h248_w248_964fcd712d3ff53338786284bcc3cd30.jpg",
+      "name": "Snaff",
+      "types": [0, 1],
+      "price": 580,
+      "category": 2,
+      "rating": 2,
+      "alt": "Snaff"
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://chitatel.by/storage/thumbs/96/h248_w248_9616755a5942001e2cc4b9febfef3e0e.jpg",
+      "name": "Омон Ра",
+      "types": [0, 1],
+      "price": 675,
+      "category": 1,
+      "rating": 9,
+      "alt": "Омон Ра"
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://chitatel.by/storage/thumbs/1a/h248_w248_1a1d114d08e50ae580d18a29cb543268.jpg",
+      "name": "Голубое Сало",
+      "types": [0, 1],
+      "price": 450,
+      "category": 4,
+      "rating": 10,
+      "alt": "Голубое Сало"
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://chitatel.by/storage/thumbs/ac/h248_w248_acb88640055240b80a9fc03592601ccb.jpg",
+      "name": "Watcher",
+      "types": [0, 1],
+      "price": 395,
+      "category": 5,
+      "rating": 10,
+      "alt": "Watcher"
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://chitatel.by/storage/thumbs/99/h248_w248_9955939ad00bae88d46058b66b9c3bac.jpg",
+      "name": "Котлован",
+      "types": [0, 1],
+      "price": 285,
+      "category": 5,
+      "rating": 7,
+      "alt": "Котлован"
+    }
+  ]
+}

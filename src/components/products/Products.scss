@@ -1,0 +1,202 @@
+@mixin buttonActiveOrDisabledStyle {
+    width: 150px;
+    border: 1px solid white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bolder;
+    
+}
+
+.body-product {
+    height: 800px;
+    .light {
+        background: white;
+    }
+    .dark {
+        background: #323a45;
+    }
+}
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 0 25px 0 25px;
+    background: #ffcc34;
+    h1 {
+        font-size: 50px;
+    }
+    .icon-user {
+        position: relative;
+        right: 20px;
+    }
+    .icon-lamp {
+        position: relative;
+        right: 35px;
+    }
+}
+
+.cont-categories {
+    width: 700px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+
+    .genre {
+        font-size: 20px;
+        font-weight: bolder;
+        cursor: pointer;
+        border: 3px solid #ffcc34;
+        padding: 10px;
+        border-radius: 20px;
+        background: cornsilk;
+    }
+    .active {
+        color: #ffcc34;
+        background: black;
+    }
+}
+
+.cont-sort-genre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.sort {
+    /* height: 745px; */
+    display: flex;
+    width: 200px;
+    margin-left: 35px;
+    margin-top: 20px;
+
+    .sort-by {
+        font-size: 20px;
+        margin-right: 20px;
+        font-weight: bolder;
+        color: #ffcc34;
+        margin-top: 5px;
+    }
+    .select-sort {
+        width: 100px;
+        text-align: center;
+        padding: 5px;
+        font-weight: bolder;
+        font-size: 18px;
+        border: none;
+        border: 3px solid #ffcc34;
+        border-radius: 20px;
+        background: cornsilk;
+        outline: none;
+        cursor: pointer;
+    }
+    .open-window-sort {
+        width: 100px;
+        text-align: center;
+        position: relative;
+        margin-left: 20px;
+        font-weight: bolder;
+        font-size: 18px;
+        border: none;
+        display: flex;
+        .change-option {
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        .active-sort {
+            color: #ffcc34;
+        }
+        .button-sort {
+            border: 1px solid #000;
+            margin-right: 15px;
+            width: 100px;
+            text-align: center;
+            padding: 7px;
+            font-weight: bolder;
+            font-size: 17px;
+            border: none;
+            border: 3px solid #ffcc34;
+            border-radius: 20px;
+            background: cornsilk;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            bottom: 6px;
+        }
+    }
+}
+
+.cont-books {
+    position: relative;
+    top: 50px;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* border: 1px solid #000; */
+    margin: auto;
+
+    .cart-books {
+        margin: auto;
+        border: 1px solid #ffcc34;
+        width: 300px;
+        height: 500px;
+        margin: 10px;
+
+        .books-wrap {
+           /*  border: 1px solid #000; */
+            text-align: center;
+            margin: 5px;
+            margin-bottom: 10px;
+            height: 50px;
+        }
+        .image-books {
+            height: 250px;
+            /* border: 1px solid #000; */
+            
+        }
+        .button-add {
+            @include buttonActiveOrDisabledStyle;
+            border-radius: 25px;
+            background: #ffcc34;
+          
+        }
+        .wrap-type {
+            width: 150px;
+            /* border: 1px solid white; */
+            padding: 10px;
+            cursor: pointer;
+        }
+        .type {
+            display: flex;
+            justify-content: space-between;
+        }
+        .active {
+            background: cornsilk;
+            @include buttonActiveOrDisabledStyle;
+            
+        }
+
+        .disabled {
+            opacity: 0.3;
+            color: gray;
+            @include buttonActiveOrDisabledStyle;
+        }
+        .name-books {
+            cursor: default;
+            font-size: 25px;
+            font-weight: bolder;
+            color: #ffcc34;
+        }
+        .price-books {
+            cursor: default;
+            font-size: 20px;
+            font-weight: bolder;
+            color: #ffcc34;
+        }
+    }
+}
