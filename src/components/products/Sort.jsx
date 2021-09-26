@@ -1,15 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 
-function Sort({ items }) {
+const Sort = React.memo(function Sort({ items, sortType, activeSortType }) {
   const [visibleOption, setVisibleOption] = useState(false);
   const [activeSort, setActiveSort] = useState(0);
 
   const sortRef = useRef();
-  const activeLabelSort = items[activeSort].name;
+  const activeLabelSort = items.find((item) => item.type === activeSortType).name;
 
   const onSelectSort = (index) => {
-    setActiveSort(index);
-    setVisibleOption(false)
+    if (sortType) {
+      sortType(index);
+    }
+    setVisibleOption(false);
   };
 
   const toggleVisibleOption = () => {
@@ -28,7 +30,7 @@ function Sort({ items }) {
 
   return (
     <div ref={sortRef} className="sort">
-      <span className="sort-by">Sort</span>
+      <span className="sort-by">Sort: </span>
       <div onClick={toggleVisibleOption}>
         <div className="select-sort">
           <span className="change-option">{activeLabelSort}</span>
@@ -39,10 +41,13 @@ function Sort({ items }) {
         <div className="open-window-sort">
           {items &&
             items.map((obj, index) => (
-              <div onClick={() => onSelectSort(index)} key={`${obj.type}_${index}`}>
+              <div
+                onClick={() => onSelectSort(obj)}
+                key={`${obj.type}_${index}`}
+              >
                 <div
                   className={
-                    activeSort === index
+                    activeSortType === obj.type
                       ? "active-sort change-option button-sort"
                       : "change-option button-sort"
                   }
@@ -55,6 +60,6 @@ function Sort({ items }) {
       )}
     </div>
   );
-}
+});
 
 export default Sort;

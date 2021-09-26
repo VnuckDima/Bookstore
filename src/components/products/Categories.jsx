@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
-function Categories({ items}) {
-  const [activeGenre, setActiveGenre] = useState(null);
-
-  const onSelectGenre = (index) => {
-    setActiveGenre(index);
-  };
-
+const Categories = React.memo(function Categories({
+  activeGenre,
+  items,
+  onClickGenre,
+}) {
   return (
     <div className="cont-categories">
       <div
-        onClick={() => onSelectGenre(null)}
+        onClick={() => onClickGenre(null)}
         className={activeGenre === null ? "active genre" : "genre"}
       >
         All
@@ -18,7 +17,7 @@ function Categories({ items}) {
       {items &&
         items.map((item, index) => (
           <div
-            onClick={() => onSelectGenre(index)}
+            onClick={() => onClickGenre(index)}
             className={activeGenre === index ? "active genre" : "genre"}
             key={`${item}_${index}`}
           >
@@ -27,6 +26,11 @@ function Categories({ items}) {
         ))}
     </div>
   );
-}
+});
 
+Categories.propTypes = {
+ /*  activeGenre: PropTypes.oneOf([PropTypes.number, null]), */
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClickGenre: PropTypes.func.isRequired,
+};
 export default Categories;

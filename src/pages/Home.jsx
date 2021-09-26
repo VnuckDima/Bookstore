@@ -2,19 +2,40 @@ import React from "react";
 import BooksBlock from "../components/products/BooksBlock";
 import Products from "../components/products/Products";
 
-function Home({ items }) {
+import { useDispatch, useSelector } from "react-redux";
+
+import LoadingBooks from "../components/products/LoadingBooks";
+
+
+function Home() {
+  const dispatch = useDispatch();
+  const items = useSelector(({ books }) => books.items);
+  const cartItems = useSelector(({ cart }) => cart.items);
+  const isLoaded = useSelector(({ books }) => books.isLoaded);
+  const handleAddBooksToCArt = (obj) => {
+    dispatch({
+    type: 'ADD_BOOKS_CART',
+    payload: obj
+    })
+  };
+
+  
   return (
     <div>
       <div>
         <Products />
       </div>
       <div className="cont-books">
-        {items && items.map((item) => (
-          <BooksBlock
-            key={item.id}
-            {...item}
-          />
-        ))}
+        {isLoaded
+          ? items.map((item) => (
+              <BooksBlock
+                onClickAddBook={handleAddBooksToCArt}
+                key={item.id}
+                cartCount = {cartItems[item.id] && cartItems[item.id].items.length}
+                {...item}
+              />
+            ))
+          : Array(10).fill(<LoadingBooks />)}
       </div>
     </div>
   );
