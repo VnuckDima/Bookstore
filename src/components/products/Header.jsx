@@ -24,13 +24,15 @@ function Header() {
           <div className="title-header">
             <h1>Book Store</h1>
           </div>
-
+        
           <div className="icon-wrap">
+          <Link to="registration">
             <AccountCircleIcon
               fontSize="large"
               style={{ color: "black" }}
               className="icon-user"
             />
+            </Link>
             <Link to="/books" style={{ textDecoration: 'none'}} >
               <div className="link-basket">
               <span className="total-price">{totalPrice} $</span>

@@ -29,15 +29,15 @@ function Products() {
 
   React.useEffect(() => {
     dispatch(getBooks(sortBy,category));
-  }, [category, sortBy]);
+  }, [category, sortBy, dispatch]);
 
   const onSelectCategory = React.useCallback((index) => {
     dispatch(setCategory(index));
-  }, []);
+  }, [dispatch]);
 
   const onSelectSort = React.useCallback((type) => {
     dispatch(setSortBy(type));
-  }, []);
+  }, [dispatch]);
 
   
   return (

@@ -58,6 +58,7 @@ function Books() {
 
           {addedBooks.map((obj) => (
             <BooksItem
+              key={obj.id}
               name={obj.name}
               type={obj.types}
               totalPrice={items[obj.id].totalPrice}
@@ -73,19 +74,19 @@ function Books() {
 
           <div className="basket-wrap-footer">
             <div>
-              <p>Total: {totalCount} pc.</p>
+              <p>
+                Total: <span>{totalCount}</span> pc.
+              </p>
             </div>
             <div>
-              <p>Price: {totalPrice} $</p>
+              <p>
+                Price: <span>{totalPrice}</span> $
+              </p>
             </div>
           </div>
           <div className="basket-wrap-footer">
-            <div>
-              <button>Back</button>
-            </div>
-            <div>
-              <button>Buy</button>
-            </div>
+            <div className="btn">Back</div>
+            <div className="btn">Buy</div>
           </div>
           <Popup active={modalActive} setActive={setModalActive}>
             <div className="books-popup-clear">

@@ -49,7 +49,6 @@ function BooksBlock({
         <GaugeChart
           className="gauge"
           style={chartStyle}
-          className="gauge"
           id="gauge-chart1"
           arcPadding={0.1}
           colors={["#EA4228", "#F5CD19", "#5BE12C"]}

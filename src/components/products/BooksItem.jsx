@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+
 import DeleteIcon from "@material-ui/icons/Delete";
+
+import Popup from "../products/popup/Popup"
 
 function BooksItem({
   id,
@@ -11,10 +14,13 @@ function BooksItem({
   count,
   onRemove,
   minusItem,
-  plusItem
+  plusItem,
 }) {
+  const [modalActive, setModalActive] = useState(false);
+
   const handleRemoveClick = () => {
     onRemove(id);
+    setModalActive(false)
   };
 
   const handlePlus = () => {
@@ -25,13 +31,15 @@ function BooksItem({
   const handleMinus = () => {
     plusItem(id)
   }
+
+ 
   return (
     <div>
       <div className="basket-wrap">
         <div className="book-cont">
           <div className="book">
             <div className="image-book">
-              <img className="image-basket" src={image} />
+              <img className="image-basket" src={image} alt="book"/>
             </div>
             <div className="book-name">{name}</div>
             <div className="book-type">{type} Version</div>
@@ -45,7 +53,7 @@ function BooksItem({
             <div onClick={handleMinus}>+</div>
           </div>
           <div className="result-sum">{totalPrice}$</div>
-          <div onClick={handleRemoveClick}>
+          <div onClick={() => setModalActive(true)}>
             <DeleteIcon
               fontSize="large"
               style={{ color: "black" }}
@@ -53,6 +61,19 @@ function BooksItem({
           </div>
         </div>
       </div>
+      <Popup active={modalActive} setActive={setModalActive}>
+            <div className="books-popup-clear">
+              <p>Are you sure?</p>
+              <div className="button-wrap">
+                <div className="btn" onClick={handleRemoveClick}>
+                  Yes
+                </div>
+                <div className="btn" onClick={() => setModalActive(false)}>
+                  No
+                </div>
+              </div>
+            </div>
+          </Popup>
     </div>
   );
 }

@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 import LoadingBooks from "../components/products/LoadingBooks";
 
-
 function Home() {
   const dispatch = useDispatch();
   const items = useSelector(({ books }) => books.items);
@@ -14,12 +13,11 @@ function Home() {
   const isLoaded = useSelector(({ books }) => books.isLoaded);
   const handleAddBooksToCArt = (obj) => {
     dispatch({
-    type: 'ADD_BOOKS_CART',
-    payload: obj
-    })
+      type: "ADD_BOOKS_CART",
+      payload: obj,
+    });
   };
 
-  
   return (
     <div>
       <div>
@@ -31,11 +29,15 @@ function Home() {
               <BooksBlock
                 onClickAddBook={handleAddBooksToCArt}
                 key={item.id}
-                cartCount = {cartItems[item.id] && cartItems[item.id].items.length}
+                cartCount={
+                  cartItems[item.id] && cartItems[item.id].items.length
+                }
                 {...item}
               />
             ))
-          : Array(10).fill(<LoadingBooks />)}
+          : Array(10)
+              .fill(0)
+              .map((_, index) => <LoadingBooks key={index} />)}
       </div>
     </div>
   );

@@ -1,17 +1,11 @@
-import React from "react";
-import Button from "./Button";
-import Products from "../products/Products";
+import React from 'react'
 
 function Registration() {
-  return (
-    <div>
-      <form>
-        <Button />
-      </form>
-
-      <Products />
-    </div>
-  );
+    return (
+        <div>
+            
+        </div>
+    )
 }
 
-export default Registration;
+export default Registration

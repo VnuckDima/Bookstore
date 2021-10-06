@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 const Sort = React.memo(function Sort({ items, sortType, activeSortType }) {
   const [visibleOption, setVisibleOption] = useState(false);
-  const [activeSort, setActiveSort] = useState(0);
 
   const sortRef = useRef();
   const activeLabelSort = items.find((item) => item.type === activeSortType).name;
