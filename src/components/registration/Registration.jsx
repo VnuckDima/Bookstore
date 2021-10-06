@@ -1,11 +1,105 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./Registration.scss";
+
+
+import { Link } from "react-router-dom";
+
 
 function Registration() {
-    return (
-        <div>
-            
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailCompleted, setEmailCompleted] = useState(false);
+  const [passwordCompleted, setPasswordCompleted] = useState(false);
+  const [emailError, setEmailError] = useState("email cannot be empty");
+  const [passwordError, setPasswordError] = useState(
+    "password cannot be empty"
+  );
+  const [formValid, setFormValid] = useState(false);
+
+  React.useEffect(() => {
+    if (emailError || passwordError) {
+      setFormValid(false);
+    } else {
+      setFormValid(true);
+    }
+  }, [emailError, passwordError]);
+
+  const handlerEmail = (e) => {
+    setEmail(e.target.value);
+    const myEmail = "hello@hotnail.com";
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(String(e.target.value).toLowerCase())) {
+      setEmailError("????");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const handlerPassword = (e) => {
+    setPassword(e.target.value);
+    if (e.target.value.length < 3 || e.target.value.length > 7) {
+      setPasswordError("< 3 and > 8");
+    } else {
+      setPasswordError("");
+    }
+  };
+  const handlerBlur = (e) => {
+    switch (e.target.name) {
+      case "email":
+        setEmailCompleted(true);
+        break;
+      case "password":
+        setPasswordCompleted(true);
+        break;
+    }
+  };
+
+  return (
+    <div className="registration-wrap">
+      <form>
+        <div className="registration-fieldset">
+          {emailCompleted && emailError && (
+            <div style={{ color: "red" }}>{emailError}</div>
+          )}
+          <div>
+            <label>
+              <input
+                className="input-email"
+                onBlur={(e) => handlerBlur(e)}
+                onChange={(e) => handlerEmail(e)}
+                value={email}
+                type="text"
+                name="email"
+                placeholder=""
+              />
+              <span className="email-label label-font">Email</span>
+            </label>
+          </div>
+          {passwordCompleted && passwordError && (
+            <div style={{ color: "red" }}>{passwordError}</div>
+          )}
+          <div>
+            <label>
+              <input
+                className="input-pass"
+                onBlur={(e) => handlerBlur(e)}
+                onChange={(e) => handlerPassword(e)}
+                value={password}
+                type="password"
+                name="password"
+              />
+              <span className="password-label label-font">Password</span>
+            </label>
+          </div>
+          <Link to="/">
+          <button className="btn" disabled={!formValid} type="submit">
+            Log In
+          </button>
+          </Link>
         </div>
-    )
+      </form>
+    </div>
+  );
 }
 
-export default Registration
+export default Registration;
