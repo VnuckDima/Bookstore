@@ -109,7 +109,7 @@ const cart = (state = initialState, action) => {
       delete newItems[action.payload];
       return {
         ...state,
-        items: newItems,
+        items: {},
       };
     }
 
