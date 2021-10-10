@@ -86,7 +86,14 @@ function Books() {
           </div>
           <div className="basket-wrap-footer">
             <div className="btn">Back</div>
-            <div className="btn">Buy</div>
+            <Link
+              to="/completed"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className="btn" onClick={onDeleteCart}>
+                Buy
+              </div>
+            </Link>
           </div>
           <Popup active={modalActive} setActive={setModalActive}>
             <div className="books-popup-clear">

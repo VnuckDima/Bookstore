@@ -7,13 +7,14 @@ function BooksBlock({
   id,
   desc,
   name,
+  genre,
   imageUrl,
   price,
   types,
   alt,
   popular,
   onClickAddBook,
-  cartCount
+  cartCount,
 }) {
   const [activeType, setActiveType] = useState(types[0]);
   const typeNames = ["Trial", "Full"];
@@ -34,8 +35,8 @@ function BooksBlock({
       imageUrl,
       price,
       desc,
-      types: typeNames[activeType]
-    }
+      types: typeNames[activeType],
+    };
     onClickAddBook(obj);
   };
 
@@ -45,7 +46,7 @@ function BooksBlock({
         <div className="image-books books-wrap">
           <img className="img-size" src={imageUrl} alt={alt} />
         </div>
-
+        <div className="genre-books books-wrap">Rating</div>
         <GaugeChart
           className="gauge"
           style={chartStyle}
@@ -60,7 +61,8 @@ function BooksBlock({
         />
 
         <div className="name-books books-wrap">{name}</div>
-        <div className="price-books books-wrap">{price} $</div>
+        <div className="genre-books books-wrap">Genre : {genre}</div>
+        <div className="price-books books-wrap">Price : {price} $</div>
         <div className=" books-wrap type">
           {typeNames.map((item, index) => (
             <div
@@ -75,9 +77,11 @@ function BooksBlock({
             </div>
           ))}
         </div>
+        <div></div>
         <div className="button-books books-wrap">
           <button className="button-add" onClick={handleAddBooks}>
-            <span>Add </span>{cartCount && <span className="cart-count">{cartCount}</span>}
+            <span>Add </span>
+            {cartCount && <span className="cart-count">{cartCount}</span>}
           </button>
         </div>
       </div>
@@ -92,7 +96,7 @@ BooksBlock.propTypes = {
   types: PropTypes.arrayOf(PropTypes.number).isRequired,
   alt: PropTypes.string.isRequired,
   onAddBook: PropTypes.func,
-  cartCount: PropTypes.number
+  cartCount: PropTypes.number,
 };
 
 export default BooksBlock;

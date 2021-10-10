@@ -29,7 +29,6 @@ const Categories = React.memo(function Categories({
 });
 
 Categories.propTypes = {
- /*  activeGenre: PropTypes.oneOf([PropTypes.number, null]), */
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClickGenre: PropTypes.func.isRequired,
 };

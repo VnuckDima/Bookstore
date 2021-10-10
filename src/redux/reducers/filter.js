@@ -1,7 +1,7 @@
 const initialState = {
   sortBy: {
-    type: 'popular',
-    order: 'desc'
+    type: "popular",
+    order: "desc",
   },
   category: null,
 };

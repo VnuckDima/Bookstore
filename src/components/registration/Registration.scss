@@ -1,0 +1,55 @@
+.registration-wrap {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .registration-fieldset {
+        width: 500px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid black;
+        border-radius: 30px;
+        background: black;
+        input {
+            width: 290px;
+            height: 60px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+            border-radius: 30px;
+            outline: none;
+            font-size: 20px;
+            color: black;
+        }
+    }
+
+    .label-font {
+        font-size: 25px;
+        position: relative;
+        left: 30px;
+        color: cornsilk;
+        margin-right: 30px;
+    }
+    .input-email {
+        position: relative;
+        right: 18px;
+    }
+
+    .btn {
+        width: 100px;
+        height: 40px;
+        padding: 5px;
+        position: relative;
+        top: 20px;
+        border: 3px solid #000;
+        border-radius: 30px;
+        outline: none;
+        background: cornsilk;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+}
