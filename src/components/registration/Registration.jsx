@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import "./Registration.scss";
 
-
 import { Link } from "react-router-dom";
-
 
 function Registration() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailCompleted, setEmailCompleted] = useState(false);
   const [passwordCompleted, setPasswordCompleted] = useState(false);
-  const [emailError, setEmailError] = useState("email cannot be empty");
+  const [emailError, setEmailError] = useState("Email cannot be empty");
   const [passwordError, setPasswordError] = useState(
     "password cannot be empty"
   );
+
   const [formValid, setFormValid] = useState(false);
 
   React.useEffect(() => {
@@ -26,10 +25,10 @@ function Registration() {
 
   const handlerEmail = (e) => {
     setEmail(e.target.value);
-    const myEmail = "hello@hotnail.com";
+
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!re.test(String(e.target.value).toLowerCase())) {
-      setEmailError("????");
+      setEmailError("Mail must be in the format 'example@hotmail.com'");
     } else {
       setEmailError("");
     }
@@ -37,12 +36,14 @@ function Registration() {
 
   const handlerPassword = (e) => {
     setPassword(e.target.value);
-    if (e.target.value.length < 3 || e.target.value.length > 7) {
-      setPasswordError("< 3 and > 8");
+
+    if (e.target.value.length > 7) {
+      setPasswordError("The length of the password must be no more than 7");
     } else {
       setPasswordError("");
     }
   };
+
   const handlerBlur = (e) => {
     switch (e.target.name) {
       case "email":
@@ -51,6 +52,9 @@ function Registration() {
       case "password":
         setPasswordCompleted(true);
         break;
+      default:
+        setEmailCompleted(false);
+        setPasswordCompleted(false);
     }
   };
 
@@ -85,17 +89,25 @@ function Registration() {
                 onBlur={(e) => handlerBlur(e)}
                 onChange={(e) => handlerPassword(e)}
                 value={password}
-                type="password"
+                type="text"
                 name="password"
               />
               <span className="password-label label-font">Password</span>
             </label>
           </div>
-          <Link to="/">
-          <button className="btn" disabled={!formValid} type="submit">
-            Log In
-          </button>
-          </Link>
+          {email === "admin@mail.ru" && password === "123" ? (
+            <Link to="/admin">
+              <button className="btn" disabled={!formValid} type="submit">
+                Log In
+              </button>
+            </Link>
+          ) : (
+            <Link to="/">
+              <button className="btn" disabled={!formValid} type="submit">
+                Log In
+              </button>
+            </Link>
+          )}
         </div>
       </form>
     </div>

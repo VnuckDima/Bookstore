@@ -102,6 +102,17 @@ const cart = (state = initialState, action) => {
       };
     }
 
+    case "DELETE_CART_ADMIN": {
+      const newItems = {
+        ...state.items,
+      };
+      delete newItems[action.payload];
+      return {
+        ...state,
+        items: newItems,
+      };
+    }
+
     default:
       return state;
   }

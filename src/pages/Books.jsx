@@ -6,6 +6,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 import { Link } from "react-router-dom";
 
+
 import BooksItem from "../components/products/BooksItem";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -20,6 +21,10 @@ import Popup from "../components/products/popup/Popup";
 function Books() {
   const dispatch = useDispatch();
   const { totalPrice, totalCount, items } = useSelector(({ cart }) => cart);
+
+  
+
+
 
   const addedBooks = Object.keys(items).map((key) => {
     return items[key].items[0];
@@ -86,7 +91,14 @@ function Books() {
           </div>
           <div className="basket-wrap-footer">
             <div className="btn">Back</div>
-            <div className="btn">Buy</div>
+            <Link
+              to="/completed"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className="btn" onClick={onDeleteCart}>
+                Buy
+              </div>
+            </Link>
           </div>
           <Popup active={modalActive} setActive={setModalActive}>
             <div className="books-popup-clear">

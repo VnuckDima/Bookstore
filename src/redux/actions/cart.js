@@ -21,3 +21,8 @@ export const minusItem = (id) => ({
   type: "MINUS_ITEM",
   payload: id,
 });
+
+export const deleteCartAdmin = (id) => ({
+  type: "DELETE_CART_ADMIN",
+  payload: id,
+});
