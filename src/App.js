@@ -3,21 +3,16 @@ import "./App.scss";
 
 import { Route } from "react-router-dom";
 
-
-
 import Header from "./components/products/Header";
 import { Home, Books } from "./pages";
-import Registration from "./components/registration/Registration"
+import Registration from "./components/registration/Registration";
 import Completed from "./components/products/Completed";
 import AdminPaige from "./components/products/admin/AdminPaige";
 
-
 function App() {
- 
   return (
     <div>
       <div>
-        {/* <Header path="/" component={Home} exact/> */}
         <Route path="/" component={Header} exact />
         <Route path="/books" component={Header} exact />
       </div>

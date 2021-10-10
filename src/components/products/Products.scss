@@ -3,7 +3,7 @@
     border: 1px solid white;
     padding: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bolder;
     border-radius: 30px;
     height: 40px;
@@ -104,7 +104,6 @@
 }
 
 .sort {
-    /* height: 745px; */
     display: flex;
     width: 200px;
     margin-left: 35px;
@@ -179,14 +178,12 @@
     background: rgb(12, 11, 11);
     .cart-books {
         margin: auto;
-        /* border: 5px solid #ffcc34; */
         width: 280px;
         height: 700px;
         margin: 10px;
         border-radius: 50px;
         padding-left: 12px;
         .books-wrap {
-            /*  border: 1px solid #000; */
             text-align: center;
             margin: 5px;
             margin-bottom: 10px;
@@ -194,7 +191,6 @@
         }
         .image-books {
             height: 250px;
-            /* border: 1px solid #000; */
             .img-size {
                 border-radius: 30px;
                 &:hover {
@@ -213,7 +209,6 @@
         }
         .wrap-type {
             width: 150px;
-            /* border: 1px solid white; */
             padding: 10px;
             cursor: pointer;
         }
@@ -233,20 +228,27 @@
         }
         .name-books {
             cursor: default;
-            font-size: 35px;
+            font-size: 28px;
             font-weight: bolder;
             color: #ffcc34;
         }
+        .genre-books {
+            cursor: default;
+            padding-top: 25px;
+            font-size: 20px;
+            font-weight: bolder;
+            color: white;
+        }
         .price-books {
             cursor: default;
-            font-size: 30px;
+            font-size: 22px;
             font-weight: bolder;
             color: #ffcc34;
             padding-top: 25px;
         }
         .gauge {
             position: relative;
-            left: 45px;
+            left: 37px;
             bottom: 10px;
         }
     }
@@ -257,10 +259,26 @@
     color: crimson;
 }
 
-
-.font-congratulations{
+.font-congratulations {
     font-size: 50px;
     text-align: center;
     position: relative;
     top: 300px;
+}
+
+.font-button-congratulations {
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 350px;
+    margin: auto;
+    border: 5px solid #000;
+    border-radius: 30px;
+    background: cornsilk;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
 }

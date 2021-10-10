@@ -4,7 +4,8 @@ const Sort = React.memo(function Sort({ items, sortType, activeSortType }) {
   const [visibleOption, setVisibleOption] = useState(false);
 
   const sortRef = useRef();
-  const activeLabelSort = items.find((item) => item.type === activeSortType).name;
+  const activeLabelSort = items.find((item) => item.type === activeSortType)
+    .name;
 
   const onSelectSort = (index) => {
     if (sortType) {

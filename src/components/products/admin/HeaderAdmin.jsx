@@ -6,7 +6,6 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 import { Link } from "react-router-dom";
 
-
 function HeaderAdmin() {
   return (
     <div>
@@ -27,7 +26,6 @@ function HeaderAdmin() {
           </div>
         </div>
       </nav>
- 
     </div>
   );
 }

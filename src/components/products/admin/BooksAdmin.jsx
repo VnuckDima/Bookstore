@@ -9,7 +9,6 @@ import { deleteCartAdmin } from "../../../redux/actions/cart";
 function BooksAdmin() {
   const dispatch = useDispatch();
   const items = useSelector(({ books }) => books.items);
-  
 
   const onRemoveItem = () => {
     dispatch(deleteCartAdmin());

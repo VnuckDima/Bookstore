@@ -3,7 +3,6 @@ import React, { useState } from "react";
 function BooksBlockAdmin({ id, name, imageUrl, price, alt, onDeleteAdmin }) {
   const handleDelBooks = () => {
     onDeleteAdmin();
-    
   };
   return (
     <div>
