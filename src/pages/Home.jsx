@@ -8,7 +8,7 @@ import LoadingBooks from "../components/products/LoadingBooks";
 
 function Home() {
   const dispatch = useDispatch();
-  const items = useSelector(({ books }) => books.items);
+  const items = useSelector(({ books }) => Array.from(books.items));
   const cartItems = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ books }) => books.isLoaded);
   const handleAddBooksToCArt = (obj) => {
