@@ -25,7 +25,7 @@ function Home() {
       </div>
       <div className="cont-books">
         {isLoaded
-          ? Array.from(items).map((item) => (
+          ? items.map((item) => (
               <BooksBlock
                 onClickAddBook={handleAddBooksToCArt}
                 key={item.id}
