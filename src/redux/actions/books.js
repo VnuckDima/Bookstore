@@ -12,7 +12,7 @@ export const getBooks = (sortBy, category) => (dispatch) => {
   });
   axios
     .get(
-      `books?${category !== null ? `category=${category}` : ""}&_sort=${
+      `/books?${category !== null ? `category=${category}` : ""}&_sort=${
         sortBy.type
       }&_order=${sortBy.order}`
     )
