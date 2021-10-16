@@ -1,6 +1,5 @@
 {
   "name": "shop",
-  "homepage": "http://DimaVnuk.github.io/Bookstore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +17,9 @@
     "axios": "^0.21.4",
     "classnames": "^2.3.1",
     "eslint-plugin-react": "^7.25.1",
+    "express-favicon": "^2.0.1",
     "history": "^5.0.1",
+    "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-confetti": "^6.0.1",
@@ -35,9 +36,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "response-scripts test --env = jsdom",
     "eject": "react-scripts eject",
