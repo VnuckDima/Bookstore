@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-function BooksBlockAdmin({ id, name, imageUrl, price, alt, onDeleteAdmin }) {
-  const handleDelBooks = () => {
-    onDeleteAdmin();
-  };
+function BooksBlockAdmin({id, name, imageUrl, price, alt,deleBooks}) {
+  
   return (
     <div>
       <div className="cart-books">
@@ -14,8 +12,8 @@ function BooksBlockAdmin({ id, name, imageUrl, price, alt, onDeleteAdmin }) {
         <div className="name-books books-wrap">{name}</div>
         <div className="price-books books-wrap">{price} $</div>
 
-        <div className="button-books books-wrap">
-          <button className="button-add" onClick={handleDelBooks}>
+        <div className="button-books books-wrap" onClick={()=> deleBooks(id)}>
+          <button className="button-add" >
             <span>Delete</span>
           </button>
         </div>
@@ -25,3 +23,4 @@ function BooksBlockAdmin({ id, name, imageUrl, price, alt, onDeleteAdmin }) {
 }
 
 export default BooksBlockAdmin;
+

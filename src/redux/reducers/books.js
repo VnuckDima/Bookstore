@@ -16,6 +16,11 @@ const books = (state = initialState, action) => {
         ...state,
         isLoaded: action.payload,
       };
+    case "DELETE_BOOKS":
+      return {
+        ...state,
+        items: state.items.filter((i) => i.id !== action.payload.id),
+      };
     default:
       return state;
   }

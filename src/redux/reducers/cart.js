@@ -101,17 +101,8 @@ const cart = (state = initialState, action) => {
         totalCount: state.totalCount - currentTotalCount,
       };
     }
+    
 
-    case "DELETE_CART_ADMIN": {
-      const newItems = {
-        ...state.items,
-      };
-      delete newItems[action.payload];
-      return {
-        ...state,
-        items: {},
-      };
-    }
 
     default:
       return state;

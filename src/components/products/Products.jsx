@@ -2,6 +2,7 @@ import React from "react";
 import Categories from "./Categories";
 import Sort from "./Sort";
 import "./Products.scss";
+import "./AdaptiveProduct.scss";
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";

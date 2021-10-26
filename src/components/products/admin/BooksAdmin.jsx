@@ -1,18 +1,21 @@
 import React from "react";
 import BooksBlockAdmin from "./BooksBlockAdmin";
 import Products from "../../products/Products";
-
-import { useDispatch, useSelector } from "react-redux";
-
-import { deleteCartAdmin } from "../../../redux/actions/cart";
+import {delBooks,deleteBooks} from "../../../redux/actions/books";
+import { useSelector, useDispatch} from "react-redux";
 
 function BooksAdmin() {
-  const dispatch = useDispatch();
-  const items = useSelector(({ books }) => books.items);
+  const dispatch = useDispatch()
 
-  const onRemoveItem = () => {
-    dispatch(deleteCartAdmin());
+  const items = useSelector(({ books }) => books.items);
+ 
+
+  const onRemoveItem = (id) => {
+    dispatch(delBooks(id));
+    console.log(dispatch(delBooks(id)))
   };
+
+ 
 
   return (
     <div>
@@ -20,9 +23,10 @@ function BooksAdmin() {
         <Products />
       </div>
       <div className="cont-books">
-        {items.map((item) => (
+        {Array.from(items).map((item) => (
           <BooksBlockAdmin
-            onDeleteAdmin={onRemoveItem}
+            id={item.id}
+            deleBooks={onRemoveItem}
             key={item.id}
             {...item}
           />

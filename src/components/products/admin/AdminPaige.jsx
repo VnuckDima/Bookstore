@@ -8,7 +8,7 @@ function AdminPaige() {
     <div>
       <HeaderAdmin />
       <div>
-        <BooksAdmin/>
+        <BooksAdmin />
       </div>
     </div>
   );

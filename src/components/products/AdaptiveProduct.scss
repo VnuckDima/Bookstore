@@ -1,0 +1,48 @@
+@media only screen and (max-width: 1080px) {
+    .cont-books {
+      width: 1000px;
+        .cart-books {
+            width: 450px;
+            height: 1200px;
+            .image-books {
+                width: 450px;
+                height: 740px;
+                .img-size {
+                    width: 450px;
+                    
+                }
+            }
+            .button-add {
+               font-size: 25px;
+               position: relative;
+            }
+            .wrap-type {
+            }
+            .type {
+                
+            }
+            .active {
+               
+            }
+    
+            .disabled {
+                
+            }
+            .name-books {
+              
+            }
+            .genre-books {
+               
+            }
+            .price-books {
+               
+            }
+            .gauge {
+                position: relative;
+                left: 120px;
+                bottom: 10px;
+            }
+        }
+    }
+    
+}

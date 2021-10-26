@@ -49,7 +49,7 @@
       "react-app/jest"
     ]
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "https://my-json-server.typicode.com/DimaVnuk/db-bookstore/",
   "browserslist": {
     "production": [
       ">0.2%",
